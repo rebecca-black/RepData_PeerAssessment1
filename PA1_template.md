@@ -1,6 +1,11 @@
-# Reproducible Research: Peer Assessment 1
-R. Black  
-Sunday, November 11, 2014  
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+author: "R. Black"
+date: "Sunday, November 11, 2014"
+---
 The purpose of this study is to answer several questions regarding steps taken by one individual wearing an activity monitoring device. This device collected motion data at 5 minute intervals daily for two months.  These data were collected during October and November, 2012. 
 
 <ul>
@@ -32,13 +37,6 @@ The questions to answer are:
 
 ```r
 require(knitr)
-```
-
-```
-## Loading required package: knitr
-```
-
-```r
 require(reshape2)
 ```
 
@@ -78,7 +76,7 @@ qplot(TotalStepsDF, main="Counts of Daily Step Totals", xlab="Total Daily Steps"
 ## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 <h4>Question 1b: What are the mean and median total number of steps taken per day?</h4>
 
 ```r
@@ -108,7 +106,7 @@ ggplot(FiveMinIntDF, aes(interval,steps)) + geom_line(lwd=.4) +
         labs(title = "Average Steps per Five Minute Interval")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
 
 <h4>Question 2b: What is the largest average number of steps in a five minute interval?</h4>
 
@@ -155,7 +153,7 @@ qplot(TotalInferredStepsDF, main="Counts of Daily Step Totals", xlab="Total Dail
 ## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-8-1.png) 
+![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 
 <ul>
 <li>Note: Although the shape of the histogram is the same as before, the count scale is different (higher)</li>
 </ul>
@@ -237,7 +235,7 @@ ggplot(data = FiveMinIntDF, aes(x = interval, y = steps, group = IsDay)) + geom_
         scale_y_continuous("Average Number of Steps")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-12-1.png) 
+![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png) 
 <ul>
 <li>There is more activity on the weekends</li>
 </ul>
